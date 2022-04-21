@@ -75,3 +75,9 @@ a {
   display: flex;
   flex-direction: row;
 }
+
+.main-content{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+}

@@ -4,11 +4,11 @@ import SideBanner from '../components/SideBanner'
 import ToTop from '../components/ToTop'
 import Footer from '../components/Footer'
 
-export default function MainSite() {
+export default function MainSite( {setPost} ) {
   return (
     <div>
       <div className="mc-sb-container">
-        <MainContent/>
+        <MainContent setPost = {setPost}/>
         <SideBanner/>
       </div>
       <ToTop/>
