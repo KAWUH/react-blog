@@ -9,11 +9,6 @@ export default function MainContent( {setPost} ) {
   const [postsList, setPostsList] = useState([]);
   const postsCollectionRef = collection( db, "posts" );
 
-  const deletePost = async (id) => {
-    const postDoc = doc(db, "posts", id);
-    await deleteDoc(postDoc);
-  };
-
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
@@ -21,21 +16,21 @@ export default function MainContent( {setPost} ) {
     };
 
     getPosts();
-  }, [deletePost]);
-
-
+  }, []);
+  
   return (
     <div className="main-content">
-      {postsList.map((post) => {
-        return(
-           <div className='post'> 
-              <p className='post-title'>{post.title}</p>
-              {/* image */}
-              <p className='post-tags'>{post.tags}</p>
-              <button onClick={() => setPost(post)}> <Link to="/article"> Read More </Link> </button>
-           </div>
-        )
-      })}
+        {postsList.map((post) => {
+          return(
+            <div className='post'> 
+                <p className='post-title'>{post.title}</p>
+                {/* image */}
+                <p className='post-tags'>{post.tags}</p>
+                <button onClick={() => setPost(post)}> <Link to="/article"> Read More </Link> </button>
+            </div>
+          )
+        })}
     </div>
   )
+  
 }

@@ -16,8 +16,10 @@ export default function LoginPage({isLoggedIn, setIsLoggedIn}) {
 
   return (
     <div className='loginPage'>
-      <p>Sign In with Google</p>
-      <button onClick = {signInWithGoogle} className='login-with-google-btn'>Sign In</button>
+      <h4 className='sign-in'>Sign in with:</h4>
+      <ul className='sign-in-options'>
+        <li><button onClick = {signInWithGoogle} className='login-with-google-btn'>Google</button></li>
+      </ul>
     </div>
   )
 }
